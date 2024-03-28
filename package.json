@@ -22,10 +22,35 @@
   "contributes": {
     "commands": [
       {
-        "command": "sample.commandOnMember",
-        "title": "%hello.world%"
+        "command": "sample.runPRTRPGPRT",
+        "title": "%runPRTRPGPRT%"
       }
-    ]
+    ],
+    "submenus": [
+      {
+        "id": "sample.commands.menu",
+        "label": "%sample.commands%"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sample.runPRTRPGPRT",
+          "when": "never"
+        }
+      ],
+      "sample.commands.menu": [
+        {
+          "command": "sample.runPRTRPGPRT"
+        }
+      ],
+      "view/item/context": [
+        {
+          "submenu": "sample.commands.menu",
+          "when": "view === objectBrowser && viewItem === member"
+        }
+      ]
+    }
   },
   "scripts": {
     "clean": "rimraf dist",
