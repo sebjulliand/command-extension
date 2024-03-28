@@ -1,5 +1,6 @@
 import { CodeForIBMi } from '@halcyontech/vscode-ibmi-types';
 import * as vscode from 'vscode';
+import {initializeCommands} from './commands';
 
 export let code4i: CodeForIBMi;
 
@@ -10,11 +11,9 @@ export async function activate(context: vscode.ExtensionContext) {
 	}
 	else {
 		throw new Error(vscode.l10n.t("This extension requires the 'halcyontechltd.code-for-ibmi' extension to be activated!"));
-	}
+	}	
 
-	context.subscriptions.push(
-		vscode.commands.registerCommand('template.helloWorld', () => vscode.window.showInformationMessage(vscode.l10n.t('Hello')))
-	);
+	initializeCommands(context);
 
 	console.log("Extension activated");
 }
