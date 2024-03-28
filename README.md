@@ -1,5 +1,5 @@
 # Sample command extension for Code for i
-Created for ([this discussion](https://github.com/orgs/codefori/discussions/1963))
+Created for [this discussion](https://github.com/orgs/codefori/discussions/1963)
 
 ## How to test
 1. Clone the repository
